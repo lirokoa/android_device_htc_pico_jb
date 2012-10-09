@@ -15,8 +15,9 @@
 # proprietary side of the device
 # Inherit from those products. Most specific first
 
-# We havent decided what props we need,yet
-# $(call inherit-product-if-exists, vendor/htc/pico/pico-vendor.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+
+DEVICE_PACKAGE_OVERLAYS += device/htc/pico/overlay
 
 # Video decoding
 PRODUCT_PACKAGES += \
@@ -114,8 +115,6 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
     persist.sys.usb.config=mass_storage \
     persist.service.adb.enable=1
 
-#$(call inherit-product, build/target/product/full.mk)
-DEVICE_PACKAGE_OVERLAYS += device/htc/pico/overlay
 
 # Publish that we support the live wallpaper feature.
 PRODUCT_COPY_FILES += \
@@ -165,9 +164,6 @@ PRODUCT_COPY_FILES += \
 # Sensors
 PRODUCT_COPY_FILES += \
     vendor/htc/pico/proprietary/lib/hw/sensors.pico.so:system/lib/hw/sensors.pico.so \
-    
-# GPS
-# Don't work on 4.0.4 because from 2.3.5! You need to compile it with yourself
 
 # 3D(ICS Blobs)
 PRODUCT_COPY_FILES += \
