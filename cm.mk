@@ -5,7 +5,8 @@ TARGET_BOOTANIMATION_NAME := vertical-320x480
 $(call inherit-product, vendor/cm/config/gsm.mk)
 
 # Inherit some common cyanogenmod stuff.
-$(call inherit-product, vendor/cm/config/common_full_phone.mk)
+$(call inherit-product, vendor/cm/config/common_mini_phone.mk)
+$(call inherit-product, device/common/gps/gps_eu_supl.mk)
 
 # Inherit device configuration
 $(call inherit-product, device/htc/pico/pico.mk)
