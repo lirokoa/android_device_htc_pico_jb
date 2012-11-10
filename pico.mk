@@ -22,10 +22,8 @@ DEVICE_PACKAGE_OVERLAYS += device/htc/pico/overlay
 # Video decoding
 PRODUCT_PACKAGES += \
     libstagefrighthw \
+    libmm-omxcore \
     libOmxCore \
-    libOmxVidEnc \
-    libOmxH264Dec \
-    libOmxMpeg4Dec
     
 # Graphics 
 PRODUCT_PACKAGES += \
