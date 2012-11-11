@@ -23,6 +23,7 @@ DEVICE_PACKAGE_OVERLAYS += device/htc/pico/overlay
 PRODUCT_PACKAGES += \
     libmm-omxcore \
     libstagefrighthw \
+    libmm-omxcore \
     libOmxCore \
     
 # Graphics 
