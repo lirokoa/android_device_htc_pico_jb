@@ -1,13 +1,52 @@
 #
 # system.prop for pico
 #
+
+#+SSD_RIL
 rild.libpath=/system/lib/libhtc_ril.so
 rild.libargs=-d /dev/smd0
+# For workaround for ro.baseband property. QCT use the property same as radio version to determine the architecture.
+# But we hard code to msm for Golfu.
+ro.baseband.arch = msm
+#-SSD_RIL
+# RilLibPath for Ganlite by Godel_Chen
 rild.libpath.ganlite=/system/lib/librilswitch.so
 rilswitch.vendorlibpath=/system/lib/libhtc_ril.so
-ro.baseband.arch = msm
-ro.telephony.ril.v3=signalstrength
+rilswitch.ganlibpath=/system/lib/libganril.so
+
+ro.ril.hep = 1
+ro.ril.enable.dtm = 0
+ro.ril.hsdpa.category = 8
+
+ro.ril.enable.a52=0
+ro.ril.enable.a53=1
+ro.ril.hsdpa.category=8
+ro.ril.hsxpa=1
+ro.ril.fast.dormancy.rule=1
+ro.ril.disable.fd.plmn.prefix=23402,23410,23411,23420,27202
+ro.ril.enable.managed.roaming=1
+ro.ril.enable.sdr=1
+ro.ril.enable.amr.wideband=1
+ro.ril.enable.r8fd=0
+ro.ril.enable.pre_r8fd=1
+ro.ril.fd.pre_r8_tout.scr_off=2
+ro.ril.fd.pre_r8_tout.scr_on=3
+ro.ril.fd.r8_tout.scr_off=0
+ro.ril.fd.r8_tout.scr_on=0
+ro.ril.htcmaskw1.bitmask = 4294967295
+ro.ril.htcmaskw1 = 14449
+
+# For HSDPA low throughput
+ro.ril.disable.power.collapse = 1
+
+# For PDP overlap problem
+ro.ril.avoid.pdp.overlap = 1
+
 ro.ril.update.acoustic.table = 1
+
+# Default network type
+# 0 => WCDMA Preferred.
+ro.telephony.default_network = 0
 
 # Time between scans in seconds. Keep it high to minimize battery drain.
 # This only affects the case in which there are remembered access points,
