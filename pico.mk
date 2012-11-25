@@ -24,6 +24,7 @@ PRODUCT_PACKAGES += \
     libmm-omxcore \
     libstagefrighthw \
     libOmxCore \
+    libI420colorconvert
     
 # Graphics 
 PRODUCT_PACKAGES += \
@@ -100,11 +101,11 @@ PRODUCT_COPY_FILES += \
 # OMX
 PRODUCT_COPY_FILES += \
     vendor/htc/pico/proprietary/lib/libmm-adspsvc.so:system/lib/libmm-adspsvc.so \
+    vendor/htc/pico/proprietary/lib/libmmosal.so:system/lib/libmmosal.so \
+    vendor/htc/pico/proprietary/lib/libmmparser.so:system/lib/libmmparser.so \
     vendor/htc/pico/proprietary/lib/libOmxH264Dec.so:system/lib/libOmxH264Dec.so \
     vendor/htc/pico/proprietary/lib/libOmxMpeg4Dec.so:system/lib/libOmxMpeg4Dec.so \
     vendor/htc/pico/proprietary/lib/libOmxVidEnc.so:system/lib/libOmxVidEnc.so \
-    vendor/htc/pico/proprietary/lib/libmmosal.so:system/lib/libmmosal.so \
-    vendor/htc/pico/proprietary/lib/libmmparser.so:system/lib/libmmparser.so \
     vendor/htc/pico/proprietary/lib/libmmparser_divxdrmlib.so:system/lib/libmmparser_divxdrmlib.so \
     vendor/htc/pico/proprietary/lib/libdivxdrmdecrypt.so:system/lib/libdivxdrmdecrypt.so \
     
